@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package dennis.dns.example;
+option go_package = "rpc/example-twirp-service;example";
+
+// Example service handles the user to user private messaging
+service Example {
+    rpc SendText(SendTextRequest) returns (SendTextResponse);
+}
+
+message SendTextRequest {
+    string text = 1;
+}
+
+message SendTextResponse {
+    string result = 1;
+}
